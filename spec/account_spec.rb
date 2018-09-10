@@ -42,6 +42,10 @@ describe Account do
     it 'cannot be negative' do
       expect{ account.deposit(-1) }.to raise_error 'Cannot deposit a negative value'
     end
+
+    it 'does not allow more than 2dp amount to be withdrawn' do
+      expect{ account.deposit(100.313) }.to raise_error 'You cannot deposit a fraction of a penny. Please enter an amount up to 2 decimal places'
+    end
   end
 
   describe '#withdraw' do
@@ -58,6 +62,20 @@ describe Account do
 
     it 'cannot be negative' do
       expect{ account.withdraw(-1) }.to raise_error 'Cannot withdraw a negative value'
+    end
+
+    it 'does not allow more than 2dp amount to be withdrawn' do
+      expect{ account.withdraw(912.313) }.to raise_error 'You cannot withdraw a fraction of a penny. Please enter an amount up to 2 decimal places'
+    end
+  end
+
+  describe '#decimals' do
+    it 'identifies the number of decimal places in a number' do
+      expect(decimals(0.1234)).to eq 4
+      expect(decimals(0.123)).to eq 3
+      expect(decimals(0.12)).to eq 2
+      expect(decimals(0.1)).to eq 1
+      expect(decimals(1)).to eq 0
     end
   end
 end
