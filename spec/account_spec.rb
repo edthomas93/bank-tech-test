@@ -34,9 +34,18 @@ describe Account do
   end
 
   describe '#transacations' do
-    it 'are each stored as hashes' do
+    it 'is an empty array on instantiation' do
+      expect(account.transactions).to eq []
+    end
+
+    it 'are each stored as hashes when depositing' do
       account.deposit(500)
-      expect(account.transactions).to eq [{:date=>"10/09/2018", :credit=>500, :debit=>nil, :balance=>500}]
+      expect(account.transactions).to eq [{:date=>"10/09/2018", :credit=>"500.00", :debit=>nil, :balance=>"500.00"}]
+    end
+
+    it 'are each stored as hashes when withdawing' do
+      account.withdraw(500)
+      expect(account.transactions).to eq [{:date=>"10/09/2018", :credit=>nil, :debit=>"500.00", :balance=>"-500.00"}]
     end
   end
 end

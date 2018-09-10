@@ -17,11 +17,11 @@ class Account
 
   def deposit(amount)
     @balance += amount
-    @transactions.push({ date: date_of_transaction,credit: amount, debit: nil, balance: @balance })
+    @transactions.push({ date: date_of_transaction,credit: sprintf('%.2f', amount), debit: nil, balance: sprintf('%.2f', @balance) })
   end
 
   def withdraw(amount)
     @balance -= amount
-    @transactions.push({ date: date_of_transaction,credit: nil, debit: amount, balance: @balance })
+    @transactions.push({ date: date_of_transaction,credit: nil, debit: sprintf('%.2f', amount), balance: sprintf('%.2f', @balance) })
   end
 end

@@ -2,7 +2,7 @@
 
 ## How to use
 
-#### 1. Upon cloning this repository, open your terminal and run the following command to install the require gemfiles.
+#### 1. Upon cloning this repository, open your terminal and run the following command to install the require gemfiles. The gems are rspec to see all passing tests, simplecov to see the test coverage and rubocop to see any formatting errors.
 ```
 bundle install
 ```
@@ -39,11 +39,16 @@ statement = Statement.new(account)
   ```
 
 #### 6. Print the statement to see your history and balance
-  ```
-  statement.print_statement
-  ```
+```
+statement.print_statement
+```
 
-#### 7. When finished, exit IRB
+#### 7. To see the number of tests and test coverage
+```
+rspec
+```
+
+#### 8. When finished, exit IRB
 ```
 exit
 ```
