@@ -2,7 +2,9 @@
 
 ## Instructions
 
-Details on how to use this application will follow as I progress on the project.
+Upon cloning this repository run `bundle install` to install the require gemfiles.
+
+Details on how to use this application will be updated as I progress on the project.
 
 ## Specification
 
