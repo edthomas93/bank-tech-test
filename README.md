@@ -1,10 +1,52 @@
 # Bank Tech Test
 
-## Instructions
+## How to use
 
-Upon cloning this repository run `bundle install` to install the require gemfiles.
+#### 1. Upon cloning this repository, open your terminal and run the following command to install the require gemfiles.
+```
+bundle install
+```
 
-Details on how to use this application will be updated as I progress on the project.
+#### 2. Run IRB from the main folder 'bank_tech_test'
+```
+irb
+```
+
+#### 3. Require file you wish to use
+```
+require './lib/statement.rb'
+```
+
+#### 4. Stop IRB return statements printing to avoid long statements
+```
+conf.return_format = ""
+```
+
+#### 4. Create an account and statement for the account
+```
+account = Account.new
+statement = Statement.new(account)
+```
+
+#### 5. Process several transactions
+* You can credit the account a certain amount by inputting:
+  ```
+  account.deposit(amount)
+  ```
+* You can debit the account a certain amount by inputting:
+  ```
+  account.withdraw(amount)
+  ```
+
+#### 6. Print the statement to see your history and balance
+  ```
+  statement.print_statement
+  ```
+
+#### 7. When finished, exit IRB
+```
+exit
+```
 
 ## Specification
 

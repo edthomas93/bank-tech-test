@@ -7,7 +7,7 @@ describe Statement do
   end
 
   # let(:subject) { described_class.new(fake_account) }
-  # let(:fake_account) { double :account, account: [
+  # let(:fake_account) { double :fake_account, account: [
   #   {date: 10/06/2011, credit: 500, debit: nil, balance: 500},
   #   {date: 21/07/2012, credit: nil, debit: 225, balance: 275}
   #   ] }
