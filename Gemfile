@@ -3,6 +3,6 @@ source 'https://rubygems.org'
 ruby '2.5.1'
 
 gem 'rspec'
-gem 'rubocop', '0.56.0'
+gem 'rubocop', require: false
 gem 'simplecov', require: false, group: :test
 gem 'simplecov-console', require: false, group: :test

@@ -1,7 +1,6 @@
 require 'time'
 
 class Account
-
   attr_reader :balance
   attr_reader :transactions
 
@@ -12,16 +11,24 @@ class Account
 
   def date_of_transaction
     t = Time.now
-    t.strftime("%d/%m/%Y")
+    t.strftime('%d/%m/%Y')
   end
 
   def deposit(amount)
-    @balance += amount
-    @transactions.push({ date: date_of_transaction,credit: sprintf('%.2f', amount), debit: nil, balance: sprintf('%.2f', @balance) })
+    if amount >= 0
+      @balance += amount
+      @transactions.push(date: date_of_transaction, credit: format('%.2f', amount), debit: nil, balance: format('%.2f', @balance))
+    else
+      raise "Cannot deposit a negative value"
+    end
   end
 
   def withdraw(amount)
-    @balance -= amount
-    @transactions.push({ date: date_of_transaction,credit: nil, debit: sprintf('%.2f', amount), balance: sprintf('%.2f', @balance) })
+    if amount >= 0
+      @balance -= amount
+      @transactions.push(date: date_of_transaction, credit: nil, debit: format('%.2f', amount), balance: format('%.2f', @balance))
+    else
+      raise "Cannot withdraw a negative value"
+    end
   end
 end
