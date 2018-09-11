@@ -38,7 +38,7 @@
 
 As this is a tech test I was hoping to implement all philosophies that I have learnt at Maker's so far. This included creating user stories and then creating Test-Driven, readable, modularised, DRY code to satisfy these desired features.
 
-###User stories:
+####User stories:
 ```
 As a customer,
 To increase the balance in my account,
