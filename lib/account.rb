@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'time'
 
 class Account
@@ -29,10 +31,10 @@ end
 
 def error_message(value)
   if !value.is_a? Numeric
-    raise "Please enter a numeric value only"
-  elsif value*100 != (value*100).to_i
-    raise "Please enter an amount up to 2 decimal places"
+    raise 'Please enter a numeric value only'
+  elsif value * 100 != (value * 100).to_i
+    raise 'Please enter an amount up to 2 decimal places'
   elsif value < 0
-    raise "Cannot input a negative value"
+    raise 'Cannot input a negative value'
   end
 end

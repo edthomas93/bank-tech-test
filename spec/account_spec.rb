@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'account'
 
 describe Account do
@@ -36,19 +38,21 @@ describe Account do
 
     it 'stores a hash in transactions with credit as a float and debit as nil' do
       account.deposit(500)
-      expect(account.transactions).to eq [{ date: date.strftime("%d/%m/%Y"), credit: '500.00', debit: nil, balance: '500.00' }]
+      expect(account.transactions).to eq [{ date: date.strftime('%d/%m/%Y'), credit: '500.00', debit: nil, balance: '500.00' }]
     end
 
     it 'cannot be negative' do
-      expect{ account.deposit(-1) }.to raise_error 'Cannot input a negative value'
+      expect { account.deposit(-1) }.to raise_error 'Cannot input a negative value'
+      expect(account.balance).to eq 0
     end
 
     it 'does not allow more than 2dp amount to be withdrawn' do
-      expect{ account.deposit(100.313) }.to raise_error 'Please enter an amount up to 2 decimal places'
+      expect { account.deposit(100.313) }.to raise_error 'Please enter an amount up to 2 decimal places'
+      expect(account.balance).to eq 0
     end
 
     it 'must eneter numeric value' do
-      expect{ account.deposit('mulah') }.to raise_error 'Please enter a numeric value only'
+      expect { account.deposit('mulah') }.to raise_error 'Please enter a numeric value only'
     end
   end
 
@@ -61,19 +65,33 @@ describe Account do
 
     it 'stores a hash in transactions with debit as a float and credit as nil' do
       account.withdraw(500)
-      expect(account.transactions).to eq [{ date: date.strftime("%d/%m/%Y"), credit: nil, debit: '500.00', balance: '-500.00' }]
+      expect(account.transactions).to eq [{ date: date.strftime('%d/%m/%Y'), credit: nil, debit: '500.00', balance: '-500.00' }]
     end
 
     it 'cannot be negative' do
-      expect{ account.withdraw(-1) }.to raise_error 'Cannot input a negative value'
+      expect { account.withdraw(-1) }.to raise_error 'Cannot input a negative value'
+      expect(account.balance).to eq 0
     end
 
     it 'does not allow more than 2dp amount to be withdrawn' do
-      expect{ account.withdraw(912.313) }.to raise_error 'Please enter an amount up to 2 decimal places'
+      expect { account.withdraw(912.313) }.to raise_error 'Please enter an amount up to 2 decimal places'
+      expect(account.balance).to eq 0
     end
 
     it 'must eneter numeric value' do
-      expect{ account.withdraw('money') }.to raise_error 'Please enter a numeric value only'
+      expect { account.withdraw('money') }.to raise_error 'Please enter a numeric value only'
+    end
+  end
+
+  describe '#error_message' do
+    it 'throws an error if non numeric value' do
+      expect { error_message('money') }.to raise_error 'Please enter a numeric value only'
+    end
+    it 'throws an error if more than 2dp' do
+      expect { error_message(2.313) }.to raise_error 'Please enter an amount up to 2 decimal places'
+    end
+    it 'throws an error if negative value' do
+      expect { error_message(-1) }.to raise_error 'Cannot input a negative value'
     end
   end
 end
