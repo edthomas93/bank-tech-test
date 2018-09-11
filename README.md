@@ -8,30 +8,30 @@
 #### 2. Install the gemfiles. The gems are rspec to see all passing tests, simplecov to see the test coverage and rubocop to see any formatting errors.
 `bundle install`
 
-#### 2. Run IRB from the main folder 'bank_tech_test'
+#### 3. Run IRB from the main folder 'bank_tech_test'
 `irb`
 
-#### 3. Require file you wish to use
+#### 4. Require file you wish to use
 `require './lib/statement.rb'`
 
-#### 4. Create an account and statement for the account
+#### 5. Create an account and statement for the account
 `account = Account.new`
 `statement = Statement.new(account)`
 
-#### 5. Process several transactions
+#### 6. Process several transactions
 * You can credit the account a certain amount by inputting:
   `account.deposit(amount)`
 * You can debit the account a certain amount by inputting:
   `account.withdraw(amount)`
 
-#### 6. Print the statement to see your history and balance
+#### 7. Print the statement to see your history and balance
 `statement.print_statement`
 
-#### 7. To see the number of tests and test coverage
+#### 8. To see the number of tests and test coverage
 `rspec`
 
 
-#### 8. When finished, exit IRB
+#### 9. When finished, exit IRB
 `exit`
 
 ## Approach
