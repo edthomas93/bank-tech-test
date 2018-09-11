@@ -3,7 +3,7 @@
 ## How to use
 
 #### 1. Open your terminal and clone the repository
-'git clone git@github.com:edthomas93/bank-tech-test.git'
+`git clone git@github.com:edthomas93/bank-tech-test.git`
 
 #### 2. Install the gemfiles. The gems are rspec to see all passing tests, simplecov to see the test coverage and rubocop to see any formatting errors.
 `bundle install`
