@@ -29,6 +29,8 @@ class Account
   end
 end
 
+private
+
 def error_message(value)
   if !value.is_a? Numeric
     raise 'Please enter a numeric value only'

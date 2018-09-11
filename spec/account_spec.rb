@@ -22,6 +22,12 @@ describe Account do
     end
   end
 
+  describe '#date_of_transaction' do
+    it 'returns date in desired format' do
+      expect(account.date_of_transaction).to eq date.strftime('%d/%m/%Y')
+    end
+  end
+
   describe '#deposit' do
     it 'increass balance by amount deposited' do
       account.deposit(500)
@@ -72,18 +78,6 @@ describe Account do
 
     it 'must eneter numeric value' do
       expect { account.withdraw('money') }.to raise_error 'Please enter a numeric value only'
-    end
-  end
-
-  describe '#error_message' do
-    it 'throws an error if non numeric value' do
-      expect { error_message('money') }.to raise_error 'Please enter a numeric value only'
-    end
-    it 'throws an error if more than 2dp' do
-      expect { error_message(2.313) }.to raise_error 'Please enter an amount up to 2 decimal places'
-    end
-    it 'throws an error if negative value' do
-      expect { error_message(-1) }.to raise_error 'Cannot input a negative value'
     end
   end
 end

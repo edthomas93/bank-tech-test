@@ -36,7 +36,24 @@
 
 ## Approach
 
-As this is a tech test I was hoping to implement all philosophies that I have learnt at Maker's so far i.e. Test-Driven, readable, modularised, DRY code.
+As this is a tech test I was hoping to implement all philosophies that I have learnt at Maker's so far. This included creating user stories and then creating Test-Driven, readable, modularised, DRY code to satisfy these desired features.
+
+###User stories:
+```
+As a customer,
+To increase the balance in my account,
+I want to be able to make deposits.
+```
+```
+As a customer,
+To access the money I have deposited,
+I want to be able to make withdrawals.
+```
+```
+As a customer,
+To be able to monitor my spending,
+I want to be able to view my bank statement.
+```
 
 ## Specification
 
