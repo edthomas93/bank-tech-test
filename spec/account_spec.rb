@@ -10,14 +10,6 @@ describe Account do
     allow(DateTime).to receive(:now).and_return(date)
   end
 
-  it 'is expected to respond to balance' do
-    expect(subject).to respond_to :balance
-  end
-
-  it 'is expected to respond to transactions' do
-    expect(subject).to respond_to :transactions
-  end
-
   describe '#balance' do
     it 'is expected to be 0 upon instantiation' do
       expect(account.balance).to eq 0
