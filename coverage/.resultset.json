@@ -2,29 +2,10 @@
   "RSpec": {
     "coverage": {
       "/Users/edwardthomas/Projects/Challenges/bank-tech-test/spec/account_spec.rb": [
-        null,
-        null,
         1,
         null,
         1,
-        11,
-        11,
-        null,
-        1,
-        10,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
-        null,
-        1,
-        1,
-        1,
-        null,
-        null,
+        9,
         null,
         1,
         1,
@@ -71,9 +52,6 @@
         null
       ],
       "/Users/edwardthomas/Projects/Challenges/bank-tech-test/lib/account.rb": [
-        null,
-        null,
-        1,
         1,
         null,
         1,
@@ -81,8 +59,8 @@
         1,
         null,
         1,
-        13,
-        13,
+        11,
+        11,
         null,
         null,
         1,
@@ -107,8 +85,6 @@
         null
       ],
       "/Users/edwardthomas/Projects/Challenges/bank-tech-test/lib/transaction.rb": [
-        null,
-        null,
         1,
         null,
         1,
@@ -128,8 +104,6 @@
         null
       ],
       "/Users/edwardthomas/Projects/Challenges/bank-tech-test/spec/features_spec.rb": [
-        null,
-        null,
         1,
         null,
         null,
@@ -180,8 +154,6 @@
         null
       ],
       "/Users/edwardthomas/Projects/Challenges/bank-tech-test/lib/statement.rb": [
-        null,
-        null,
         1,
         null,
         1,
@@ -195,11 +167,18 @@
         4,
         null,
         null,
+        null,
+        null,
+        1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
         null
       ],
       "/Users/edwardthomas/Projects/Challenges/bank-tech-test/spec/statement_spec.rb": [
-        null,
-        null,
         1,
         null,
         1,
@@ -210,14 +189,6 @@
         2,
         2,
         null,
-        1,
-        null,
-        1,
-        1,
-        1,
-        1,
-        null,
-        1,
         1,
         1,
         1,
@@ -231,8 +202,6 @@
         null
       ],
       "/Users/edwardthomas/Projects/Challenges/bank-tech-test/spec/transaction_spec.rb": [
-        null,
-        null,
         1,
         null,
         1,
@@ -266,6 +235,6 @@
         null
       ]
     },
-    "timestamp": 1536763808
+    "timestamp": 1536767950
   }
 }

@@ -1,26 +1,7 @@
-# frozen_string_literal: true
-
 require 'account'
 
 describe Account do
   let(:account) { Account.new }
-  let(:date) { Time.now }
-
-  before(:each) do
-    allow(Time).to receive(:now).and_return(date)
-  end
-
-  describe '#balance' do
-    it 'is expected to be 0 upon instantiation' do
-      expect(account.balance).to eq 0
-    end
-  end
-
-  describe '#transacations' do
-    it 'is an empty array on instantiation' do
-      expect(account.transactions).to eq []
-    end
-  end
 
   describe '#deposit' do
     it 'increass balance by amount deposited' do

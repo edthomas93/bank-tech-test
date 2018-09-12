@@ -1,11 +1,8 @@
-# frozen_string_literal: true
-
-require 'time'
 require_relative 'transaction'
 
 class Account
   attr_reader :balance
-  attr_reader :transactions
+  attr_reader :transactions #SHOULDN'T USE, REVERSE DEPENDENCIES
 
   def initialize
     @balance = 0
