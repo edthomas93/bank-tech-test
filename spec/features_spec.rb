@@ -40,9 +40,8 @@ describe 'user can view their transaction history' do
 
   it 'by viewing a statement in the command line' do
     account = Account.new
-    statement = Statement.new(account)
     account.deposit(800)
     account.withdraw(200)
-    expect { statement.print_statement }.to output("date || credit || debit || balance\n#{date.strftime('%d/%m/%Y')} ||  || 200.00 || 600.00\n#{date.strftime('%d/%m/%Y')} || 800.00 ||  || 800.00\n").to_stdout
+    expect { account.print_statement }.to output("date || credit || debit || balance\n#{date.strftime('%d/%m/%Y')} ||  || 200.00 || 600.00\n#{date.strftime('%d/%m/%Y')} || 800.00 ||  || 800.00\n").to_stdout
   end
 end

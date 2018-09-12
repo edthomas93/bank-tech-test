@@ -1,12 +1,13 @@
 require_relative 'transaction'
+require_relative 'statement'
 
 class Account
   attr_reader :balance
-  attr_reader :transactions #SHOULDN'T USE, REVERSE DEPENDENCIES
 
-  def initialize
+  def initialize(statement = Statement.new)
     @balance = 0
     @transactions = []
+    @statement = statement
   end
 
   def deposit(amount)
@@ -19,6 +20,10 @@ class Account
     error_message(amount)
     @balance -= amount
     @transactions.push(Transaction.new(-amount, @balance))
+  end
+
+  def print_statement
+    @statement.print_statement(@transactions)
   end
 end
 

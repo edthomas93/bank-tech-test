@@ -1,13 +1,7 @@
-require_relative 'account'
-
 class Statement
-  def initialize(account)
-    @account = account
-  end
-
-  def print_statement
+  def print_statement(transactions)
     puts 'date || credit || debit || balance'
-    @account.transactions.reverse.each do |transaction|
+    transactions.reverse.each do |transaction|
       puts "#{transaction.date} || #{transaction.credit} || #{transaction.debit} || #{transaction.balance}"
     end
   end

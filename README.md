@@ -2,36 +2,34 @@
 
 ## How to use
 
-#### 1. Open your terminal and clone the repository
+#### 1. Open your terminal and clone the repository:
 `git clone git@github.com:edthomas93/bank-tech-test.git`
 
-#### 2. Install the gemfiles. The gems are rspec to see all passing tests, simplecov to see the test coverage and rubocop to see any formatting errors.
+#### 2. Install the gemfiles. The gems are rspec to see all passing tests, simplecov to see the test coverage and rubocop to see any formatting errors:
 `bundle install`
 
-#### 3. Run IRB from the main folder 'bank_tech_test'
+#### 3. To see if the tests are passing and the coverage type from the folder 'bank_tech_test':
+`rspec`
+
+#### 4. To run the program start IRB:
 `irb`
 
-#### 4. Require file you wish to use
-`require './lib/statement.rb'`
+#### 5. Require file you wish to use:
+`require './lib/account.rb'`
 
-#### 5. Create an account and statement for the account
+#### 6. Create an account:
 `account = Account.new`
-`statement = Statement.new(account)`
 
-#### 6. Process several transactions
+#### 7. Process several transactions
 * You can credit the account a certain amount by inputting:
   `account.deposit(amount)`
 * You can debit the account a certain amount by inputting:
   `account.withdraw(amount)`
 
-#### 7. Print the statement to see your history and balance
-`statement.print_statement`
+#### 8. Print the statement to see your history and balance:
+`account.print_statement`
 
-#### 8. To see the number of tests and test coverage
-`rspec`
-
-
-#### 9. When finished, exit IRB
+#### 9. When finished, exit IRB:
 `exit`
 
 ## Approach
