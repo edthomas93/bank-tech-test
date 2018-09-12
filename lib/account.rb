@@ -36,7 +36,7 @@ def error_message(value)
     raise 'Please enter a numeric value only'
   elsif value * 100 != (value * 100).to_i
     raise 'Please enter an amount up to 2 decimal places'
-  elsif value < 0
+  elsif value.negative?
     raise 'Cannot input a negative value'
   end
 end
