@@ -4,10 +4,10 @@ require 'account'
 
 describe Account do
   let(:account) { Account.new }
-  let(:date) { DateTime.now }
+  let(:date) { Time.now }
 
   before(:each) do
-    allow(DateTime).to receive(:now).and_return(date)
+    allow(Time).to receive(:now).and_return(date)
   end
 
   describe '#balance' do
@@ -22,21 +22,10 @@ describe Account do
     end
   end
 
-  describe '#date_of_transaction' do
-    it 'returns date in desired format' do
-      expect(account.date_of_transaction).to eq date.strftime('%d/%m/%Y')
-    end
-  end
-
   describe '#deposit' do
     it 'increass balance by amount deposited' do
       account.deposit(500)
       expect(account.balance).to eq 500
-    end
-
-    it 'stores a hash in transactions with credit as a float and debit as nil' do
-      account.deposit(500)
-      expect(account.transactions).to eq [{ date: date.strftime('%d/%m/%Y'), credit: '500.00', debit: nil, balance: '500.00' }]
     end
 
     it 'cannot be negative' do
@@ -59,11 +48,6 @@ describe Account do
       account.deposit(500)
       account.withdraw(300)
       expect(account.balance).to eq 200
-    end
-
-    it 'stores a hash in transactions with debit as a float and credit as nil' do
-      account.withdraw(500)
-      expect(account.transactions).to eq [{ date: date.strftime('%d/%m/%Y'), credit: nil, debit: '500.00', balance: '-500.00' }]
     end
 
     it 'cannot be negative' do

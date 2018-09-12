@@ -11,9 +11,9 @@ describe Statement do
     ]
   end
 
-  describe '#print_statement' do
-    it 'is expected to print the statement' do
-      expect { subject.print_statement }.to output("date || credit || debit || balance\n21/07/2012 ||  || 225.00 || 275.00\n10/06/2011 || 500.00 ||  || 500.00\n").to_stdout
-    end
-  end
+  # describe '#print_statement' do
+  #   it 'is expected to print the statement' do
+  #     expect { subject.print_statement }.to output("date || credit || debit || balance\n21/07/2012 ||  || 225.00 || 275.00\n10/06/2011 || 500.00 ||  || 500.00\n").to_stdout
+  #   end
+  # end
 end

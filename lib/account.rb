@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'time'
+require_relative 'transaction'
 
 class Account
   attr_reader :balance
@@ -11,32 +12,23 @@ class Account
     @transactions = []
   end
 
-  def date_of_transaction
-    date = DateTime.now
-    date.strftime('%d/%m/%Y')
-  end
-
   def deposit(amount)
     error_message(amount)
     @balance += amount
-    @transactions.push(date: date_of_transaction, credit: format('%.2f', amount), debit: nil, balance: format('%.2f', @balance))
+    @transactions.push(Transaction.new(amount, @balance))
   end
 
   def withdraw(amount)
     error_message(amount)
     @balance -= amount
-    @transactions.push(date: date_of_transaction, credit: nil, debit: format('%.2f', amount), balance: format('%.2f', @balance))
+    @transactions.push(Transaction.new(-amount, @balance))
   end
 end
 
 private
 
 def error_message(value)
-  if !value.is_a? Numeric
-    raise 'Please enter a numeric value only'
-  elsif value * 100 != (value * 100).to_i
-    raise 'Please enter an amount up to 2 decimal places'
-  elsif value.negative?
-    raise 'Cannot input a negative value'
-  end
+  raise 'Please enter a numeric value only' unless value.is_a? Numeric
+  raise 'Please enter an amount up to 2 decimal places' if value * 100 != (value * 100).to_i
+  raise 'Cannot input a negative value' if value.negative?
 end
