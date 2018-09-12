@@ -26,9 +26,8 @@ describe Account do
 
   describe '#withdraw' do
     it 'decreases balance by amount withdrawn' do
-      account.deposit(500)
       account.withdraw(300)
-      expect(account.balance).to eq 200
+      expect(account.balance).to eq(-300)
     end
 
     it 'cannot be negative' do
@@ -43,6 +42,10 @@ describe Account do
 
     it 'must eneter numeric value' do
       expect { account.withdraw('money') }.to raise_error 'Please enter a numeric value only'
+    end
+
+    it 'does not let you withdraw beyond the overdraft limit' do
+      expect { account.withdraw(Account::OVERDRAFT + 0.01) }.to raise_error "#{Account::OVERDRAFT} is overdraft capacity"
     end
   end
 end

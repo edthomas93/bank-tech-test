@@ -4,6 +4,8 @@ require_relative 'statement'
 class Account
   attr_reader :balance
 
+  OVERDRAFT = 1000
+
   def initialize(statement = Statement.new)
     @balance = 0
     @transactions = []
@@ -18,6 +20,7 @@ class Account
 
   def withdraw(amount)
     error_message(amount)
+    raise "#{OVERDRAFT} is overdraft capacity" if amount > @balance + OVERDRAFT
     @balance -= amount
     @transactions.push(Transaction.new(-amount, @balance))
   end

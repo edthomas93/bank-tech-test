@@ -21,8 +21,8 @@ describe 'user can withdraw money that they have deposited' do
   it 'decreass balance by amount withdrawn' do
     account = Account.new
     expect(account.balance).to eq 0
-    account.deposit(10000)
-    expect(account.balance).to eq 10000
+    account.deposit(10_000)
+    expect(account.balance).to eq 10_000
     account.withdraw(30.21)
     expect(account.balance).to eq 9969.79
   end
