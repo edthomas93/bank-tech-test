@@ -34,17 +34,17 @@ end
 # To be able to monitor my spending,
 # I want to be able to view my bank statement.
 
-# describe 'user can view their transaction history' do
-#   let(:date) { Time.now }
-#   before(:each) do
-#     allow(Time).to receive(:now).and_return(date)
-#   end
-#
-#   it 'by viewing a statement in the command line' do
-#     account = Account.new
-#     statement = Statement.new(account)
-#     account.deposit(800)
-#     account.withdraw(200)
-#     expect { statement.print_statement }.to output("date || credit || debit || balance\n#{date.strftime('%d/%m/%Y')} ||  || 200.00 || 600.00\n#{date.strftime('%d/%m/%Y')} || 800.00 ||  || 800.00\n").to_stdout
-#   end
-# end
+describe 'user can view their transaction history' do
+  let(:date) { Time.now }
+  before(:each) do
+    allow(Time).to receive(:now).and_return(date)
+  end
+
+  it 'by viewing a statement in the command line' do
+    account = Account.new
+    statement = Statement.new(account)
+    account.deposit(800)
+    account.withdraw(200)
+    expect { statement.print_statement }.to output("date || credit || debit || balance\n#{date.strftime('%d/%m/%Y')} ||  || 200.00 || 600.00\n#{date.strftime('%d/%m/%Y')} || 800.00 ||  || 800.00\n").to_stdout
+  end
+end
