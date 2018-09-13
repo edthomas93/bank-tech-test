@@ -1,8 +1,8 @@
 require 'transaction'
 
 describe Transaction do
-  let(:transaction1) { Transaction.new(50, 250) }
-  let(:transaction2) { Transaction.new(-50, 150) }
+  let(:transaction1) { Transaction.create(50, 250) }
+  let(:transaction2) { Transaction.create(-50, 150) }
   let(:date) { Time.now }
 
   before(:each) do

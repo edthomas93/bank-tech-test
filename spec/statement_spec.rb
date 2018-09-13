@@ -15,4 +15,11 @@ describe Statement do
       expect { subject.print_statement(transactions) }.to output("date || credit || debit || balance\n21/07/2012 ||  || 225.00 || 275.00\n10/06/2011 || 500.00 ||  || 500.00\n").to_stdout
     end
   end
+
+  def build_fake_transaction(name, date, credit, debit, balance)
+    allow(name).to receive(:date).and_return(date)
+    allow(name).to receive(:credit).and_return(credit)
+    allow(name).to receive(:debit).and_return(debit)
+    allow(name).to receive(:balance).and_return(balance)
+  end
 end

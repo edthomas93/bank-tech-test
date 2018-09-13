@@ -15,14 +15,14 @@ class Account
   def deposit(amount)
     error_message(amount)
     @balance += amount
-    @transactions.push(Transaction.new(amount, @balance))
+    @transactions.push(Transaction.create(amount, @balance))
   end
 
   def withdraw(amount)
     error_message(amount)
     raise "#{OVERDRAFT} is overdraft capacity" if amount > @balance + OVERDRAFT
     @balance -= amount
-    @transactions.push(Transaction.new(-amount, @balance))
+    @transactions.push(Transaction.create(-amount, @balance))
   end
 
   def print_statement

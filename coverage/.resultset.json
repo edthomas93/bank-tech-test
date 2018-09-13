@@ -105,12 +105,20 @@
         11,
         11,
         11,
+        11,
+        null,
+        null,
+        1,
+        11,
+        11,
+        11,
         7,
         7,
         null,
         4,
         4,
         null,
+        11,
         null,
         null
       ],
@@ -122,15 +130,6 @@
         4,
         null,
         null,
-        null,
-        null,
-        1,
-        null,
-        1,
-        2,
-        2,
-        2,
-        2,
         null
       ],
       "/Users/edwardthomas/Projects/Challenges/bank-tech-test/spec/features_spec.rb": [
@@ -200,6 +199,13 @@
         2,
         null,
         null,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
         null
       ],
       "/Users/edwardthomas/Projects/Challenges/bank-tech-test/spec/transaction_spec.rb": [
@@ -236,6 +242,6 @@
         null
       ]
     },
-    "timestamp": 1536774762
+    "timestamp": 1536833572
   }
 }
