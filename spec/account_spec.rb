@@ -1,7 +1,7 @@
 require 'account'
 
 describe Account do
-  let(:account) { Account.new }
+  let(:account) { Account.new(fake_statement) }
   let(:fake_statement) { double :statement }
 
   describe '#deposit' do
@@ -52,9 +52,8 @@ describe Account do
 
   describe '#print_statement' do
     it 'decreases balance by amount withdrawn' do
-      account_with_fake_statement = Account.new(fake_statement)
       expect(fake_statement).to receive(:print_statement)
-      account_with_fake_statement.print_statement
+      account.print_statement
     end
   end
 end
