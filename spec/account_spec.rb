@@ -2,6 +2,7 @@ require 'account'
 
 describe Account do
   let(:account) { Account.new }
+  let(:fake_statement) { double :statement }
 
   describe '#deposit' do
     it 'increass balance by amount deposited' do
@@ -46,6 +47,14 @@ describe Account do
 
     it 'does not let you withdraw beyond the overdraft limit' do
       expect { account.withdraw(Account::OVERDRAFT + 0.01) }.to raise_error "#{Account::OVERDRAFT} is overdraft capacity"
+    end
+  end
+
+  describe '#print_statement' do
+    it 'decreases balance by amount withdrawn' do
+      account_with_fake_statement = Account.new(fake_statement)
+      expect(fake_statement).to receive(:print_statement)
+      account_with_fake_statement.print_statement
     end
   end
 end
